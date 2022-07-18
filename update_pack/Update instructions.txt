@@ -1,0 +1,18 @@
+MAKE SURE THAT YOU ARE RUNNING THE 4.3 VERSION BEFORE UPDATING TO 5.0
+IF YOU ARE ALREADY RUNNING THE 5.0 VERSION THERE IS NO NEED TO UPDATE.
+
+Please follow the instructions carefully.
+If you have customized your source code, backup your customize files.
+
+- Open update_5.0 folder. You can see some folder or files.
+
+- Move the autoload.php file inside the application > config folder to your main server.
+Location: Root directory > application > config > autoload.php
+
+- Move all folder and files inside the application folder to your main server.
+  Location: Root directory > application > views, helpers, controllers, models.
+
+- Move all folder and files inside the assets folder to your main server.
+  Location: Root directory > assets > css, js, payment.
+
+- Import update_5.0.sql file on your database.
