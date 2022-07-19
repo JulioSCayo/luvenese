@@ -12,7 +12,7 @@
                 <?php echo form_open(site_url('admin/project_historia_clinica/create/'.$param2), array('class' => 'form-horizontal form-groups-bordered validate project-historia_clinica-add', 'enctype' => 'multipart/form-data')); ?>
 
                 <div class="form-group">
-                    <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('title'); ?></label>
+                    <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('title'); ?>*</label>
 
                     <div class="col-sm-7">
                         <input type="text" class="form-control" name="title" data-validate="required" data-message-required="<?php echo get_phrase('value_required'); ?>" value="" autofocus>
@@ -20,30 +20,31 @@
                 </div>
 
                 <div class="form-group">
-                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('Nombre_completo')?></label>
+                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('Nombre_completo')?>*</label>
                 <div class="col-sm-7">
                 <input type="text" class="form-control" name="nombre_completo" data-validate="required" data-message-required="<?php echo get_phrase('value_required'); ?>" value="" autofocus>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('Fecha_de_nacimiento')?></label>
+                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('Fecha_de_nacimiento')?>*</label>
                 <div class="col-sm-7">
                 <input type="date" class="form-control" name="nacimiento" data-validate="required" data-message-required="<?php echo get_phrase('value_required'); ?>" value="" autofocus>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('Nacionalidad')?></label>
+                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('Nacionalidad')?>*</label>
                 <div class="col-sm-7">
                 <input type="text" class="form-control" name="nacionalidad" data-validate="required" data-message-required="<?php echo get_phrase('value_required'); ?>" value="" autofocus>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('sexo'); ?></label>
+                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('sexo'); ?>*</label>
                 <div class="col-sm-5">
-                    <select name="sexo" class="form-control selectboxit">
+                    <select name="sexo" class="form-control selectboxit" data-validate="required" data-message-required="<?php echo get_phrase('value_required'); ?>">
+                        <option value="" disabled selected><?php echo get_phrase('seleccionar'); ?></option>
                         <option value="0" data-iconurl=""><?php echo get_phrase('masculino'); ?></option>
                         <option value="1"><?php echo get_phrase('femenino'); ?></option>
                     </select>
@@ -51,7 +52,7 @@
             </div>
 
             <div class="form-group">
-                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('Genero')?></label>
+                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('Genero')?>*</label>
                 <div class="col-sm-7">
                 <input type="text" class="form-control" name="genero" data-validate="required" data-message-required="<?php echo get_phrase('value_required'); ?>" value="" autofocus>
                 </div>
@@ -85,14 +86,14 @@
             </div>
 
             <div class="form-group">
-                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('Estatura_(cm)')?></label>
+                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('Estatura_(cm)')?>*</label>
                 <div class="col-sm-7">
                 <input type="text" class="form-control" name="estatura" data-validate="required" data-message-required="<?php echo get_phrase('value_required'); ?>" value="" autofocus>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('Peso_(Kg)')?></label>
+                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('Peso_(Kg)')?>*</label>
                 <div class="col-sm-7">
                 <input type="text" class="form-control" name="peso" data-validate="required" data-message-required="<?php echo get_phrase('value_required'); ?>" value="" autofocus>
                 </div>
@@ -109,28 +110,28 @@
             </div>
 
             <div class="form-group">
-                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('Grado_de_estudios')?></label>
+                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('Grado_de_estudios')?>*</label>
                 <div class="col-sm-7">
                 <input type="text" class="form-control" name="grado_estudios" data-validate="required" data-message-required="<?php echo get_phrase('value_required'); ?>" value="" autofocus>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('Ocupacion')?></label>
+                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('Ocupacion')?>*</label>
                 <div class="col-sm-7">
                 <input type="text" class="form-control" name="ocupacion" data-validate="required" data-message-required="<?php echo get_phrase('value_required'); ?>" value="" autofocus>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('Email')?></label>
+                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('Email')?>*</label>
                 <div class="col-sm-7">
-                <input type="text" class="form-control" name="email" data-validate="required" data-message-required="<?php echo get_phrase('value_required'); ?>" value="" autofocus>
+                <input type="email" class="form-control" name="email" data-validate="required" data-message-required="<?php echo get_phrase('value_required'); ?>" value="" autofocus>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('Motivo_de_consulta')?></label>
+                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('Motivo_de_consulta')?>*</label>
                 <div class="col-sm-7">
                 <input type="text" class="form-control" name="motivo_consulta" data-validate="required" data-message-required="<?php echo get_phrase('value_required'); ?>" value="" autofocus>
                 </div>
@@ -192,32 +193,32 @@
                 </div>
             </div>
 
+            <div class="form-group">
+                <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('assign_staff'); ?></label>
 
-                <div class="form-group">
-                    <label for="field-1" class="col-sm-3 control-label"><?php echo get_phrase('assign_staff'); ?></label>
+                <div class="col-sm-5">
+                    <select name="assigned_staff" class="select2">
+                        <option selected="true" value=""><?php echo get_phrase('ninguno'); ?></option>
 
-                    <div class="col-sm-5">
-                        <select name="assigned_staff" class="select2">
-                            <option><?php echo get_phrase('select_staff'); ?></option>
-                            <?php
-                            $assigned_staffs = $this->db->get_where('project', array('project_code' => $param2))->row()->staffs;
-                            $staffs = ( explode(',', $assigned_staffs));
-                            $number_of_staffs = count($staffs) - 1;
-                            if ($number_of_staffs > 0):
-                                for ($i = 0; $i < $number_of_staffs; $i++):
-                                    $staff_data = $this->db->get_where('staff', array('staff_id' => $staffs[$i]))->result_array();
-                                    foreach ($staff_data as $row):
-                                        ?>
-                                        <option value="<?php echo $row['staff_id']; ?>">
-                                            <?php echo $row['name']; ?></option>
-                                        <?php
-                                    endforeach;
-                                endfor;
-                            endif;
-                            ?>
-                        </select>
-                    </div>
-                </div>               
+                        <?php
+                        $assigned_staffs = $this->db->get_where('project', array('project_code' => $param2))->row()->staffs;
+                        $staffs = ( explode(',', $assigned_staffs));
+                        $number_of_staffs = count($staffs) - 1;
+                        if ($number_of_staffs > 0):
+                            for ($i = 0; $i < $number_of_staffs; $i++):
+                                $staff_data = $this->db->get_where('staff', array('staff_id' => $staffs[$i]))->result_array();
+                                foreach ($staff_data as $row):
+                        ?>
+                                    <option value="<?php echo $row['staff_id']; ?>"> <?php echo $row['name']; ?></option>
+                        <?php
+                                endforeach;
+                            endfor;
+                        endif;
+                        ?>
+
+                    </select>
+                </div>
+            </div>            
 
                 <div class="form-group">
                     <div class="col-sm-offset-3 col-sm-7">
@@ -272,7 +273,62 @@ function validate_project_historia_clinica_add(formData, jqForm, options) {
 
     if (!jqForm[0].title.value)
     {
-        toastr.error("Please enter a historia_clinica", "Error");
+        toastr.error("Please enter a title", "Error");
+        return false;
+    }
+    if (!jqForm[0].nombre_completo.value)
+    {
+        toastr.error("Please enter you name", "Error");
+        return false;
+    }
+    if (!jqForm[0].nacimiento.value)
+    {
+        toastr.error("Please enter your birthday", "Error");
+        return false;
+    }
+    if (!jqForm[0].nacionalidad.value)
+    {
+        toastr.error("Please enter your nationality", "Error");
+        return false;
+    }
+    if (!jqForm[0].sexo.value)
+    {
+        toastr.error("Please enter your sex", "Error");
+        return false;
+    }
+    if (!jqForm[0].genero.value)
+    {
+        toastr.error("Please enter your gender", "Error");
+        return false;
+    }
+    if (!jqForm[0].estatura.value)
+    {
+        toastr.error("Please enter your height", "Error");
+        return false;
+    }
+    if (!jqForm[0].peso.value)
+    {
+        toastr.error("Please enter your weight", "Error");
+        return false;
+    }
+    if (!jqForm[0].grado_estudios.value)
+    {
+        toastr.error("Please enter your level of study", "Error");
+        return false;
+    }
+    if (!jqForm[0].ocupacion.value)
+    {
+        toastr.error("Please enter your occupation", "Error");
+        return false;
+    }
+    if (!jqForm[0].email.value)
+    {
+        toastr.error("Please enter an email", "Error");
+        return false;
+    }
+    if (!jqForm[0].motivo_consulta.value)
+    {
+        toastr.error("Please enter a reason for your consultation", "Error");
         return false;
     }
 }
@@ -281,7 +337,7 @@ function validate_project_historia_clinica_add(formData, jqForm, options) {
 function show_response_project_historia_clinica_add(responseText, statusText, xhr, $form)  {
 
     
-    toastr.success("Project historia_clinica added successfully", "Success");
+    toastr.success("Project historia clinica added successfully", "Success");
     $('#modal_ajax').modal('hide');
     reload_data(post_refresh_url);
 }

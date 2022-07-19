@@ -14,61 +14,72 @@ foreach ($historia_clinica as $row):
 
         <div class="col-md-12">
 
-            <blockquote class="blockquote-default">
+            <div class="panel panel-primary" data-collapsed="0">
 
-                <p>
+                <div class="panel-heading">
 
-                    <strong><?php echo $row['title']; ?></strong>
+                    <div class="panel-title" >
 
-                </p>
+                        <i class="entypo-plus-circled"></i>
 
-                <p>
+                        <?php echo $row['title']; ?>
 
-                    <small><?php echo $row['motivo_consulta']; ?></small>
+                    </div>
 
+                </div>
 
-                <hr />
+                <div class="panel-body">
 
+                    <p>
+                        <i class="entypo-user" style="color: #ccc;"></i>
+                        <?php
+                            // $type = $row['user_type'];
+                            // $id = $row['user_id'];
+                            // $name = $this->db->get_where($type, array($type . '_id' => $id))->row()->name;
 
+                            echo $row['nombre_completo'];
+                        ?>
+                    </p>
 
-                <i class="entypo-user" style="color: #ccc;"></i>
+                    <p>
+                        <i class="entypo-calendar" style="color: #ccc;"></i>
 
-                <?php
+                        <?php echo date("d M Y", $row['timestamp']); ?>
+                    </p>
 
-                $type = $row['user_type'];
+                    <p>
+                        <i class="entypo-vcard" style="color: #ccc;"></i>
 
-                $id = $row['user_id'];
+                        <?php
+                            $assigned_staffs = $this->db->get_where('project', array('project_code' => $param3))->row()->staffs;
+                            $staffs = ( explode(',', $assigned_staffs));
+                            $number_of_staffs = count($staffs) - 1;
+                            if($row['assigned_staff']) {
+                                if ($number_of_staffs > 0):
+                                    for ($i = 0; $i < $number_of_staffs; $i++):
+                                        $staff_data = $this->db->get_where('staff', array('staff_id' => $staffs[$i]))->result_array();
+                                        foreach ($staff_data as $row2):
+                                            if($row2['staff_id'] == $row['assigned_staff']) echo "Staff asignado: " . $row2['name'];
+                                        endforeach;
+                                    endfor;
+                                endif;
+                            }
+                            else {
+                                echo "Sin staff asignado";
+                            }
+                        ?>
+                    </p>
 
-                $name = $this->db->get_where($type, array($type . '_id' => $id))->row()->name;
+                    <hr/>
 
-                echo $name;
+                    <p><strong>Motivo de consulta</strong></p>      
+                    <p><?php echo $row['motivo_consulta']; ?></p>
 
-                ?>
+                </div>
 
-                &nbsp;
-
-                &nbsp;
-
-                <i class="entypo-calendar" style="color: #ccc;"></i>
-
-    <?php echo date("d M Y", $row['timestamp']); ?>
-
-                &nbsp;
-
-                &nbsp;
-
-                
-
-                </p>
-
-
-
-            </blockquote>
-
-
+            </div>
 
         </div>
-
     </div>
 
 

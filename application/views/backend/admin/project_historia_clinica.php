@@ -90,8 +90,9 @@
                                 $staff = $this->db->get_where('staff',array('staff_id'=>$row1['assigned_staff']));
 
                                 if($staff->num_rows()>0)
-
                                     echo $staff->row()->name;
+                                else 
+                                    echo "Ninguno";
 
                                 ?>
 
@@ -101,31 +102,31 @@
 
                                 <a class="tooltip-default" style="color:#aaa;" data-toggle="tooltip"
 
-                                   data-placement="top" data-original-title="<?php echo get_phrase('view');?>"
+                                    data-placement="top" data-original-title="<?php echo get_phrase('view');?>"
 
-                                   href="#" onclick="showAjaxModal('<?php echo site_url('modal/popup/project_historia_clinica_view/' . $row1['project_historia_clinica_id']); ?>')">
+                                    onclick="showAjaxModal('<?php echo site_url('modal/popup/project_historia_clinica_view/' . $row1['project_historia_clinica_id'] . '/' . $project_code); ?>');">
 
-                                            <i class="entypo-info"></i>
-
-                                </a>
-
-                                <a class="tooltip-default" style="color:#aaa;cursor:pointer;" data-toggle="tooltip"
-
-                                       data-placement="top" data-original-title="<?php echo get_phrase('edit'); ?>"
-
-                                       onclick="showAjaxModal('<?php echo site_url('modal/popup/project_historia_clinica_edit/' . $row1['project_historia_clinica_id'] . '/' . $project_code); ?>');">
-
-                                        <i class="entypo-pencil"></i>
+                                    <i class="entypo-info"></i>
 
                                 </a>
 
                                 <a class="tooltip-default" style="color:#aaa;cursor:pointer;" data-toggle="tooltip"
 
-                                       data-placement="top" data-original-title="<?php echo get_phrase('delete'); ?>"
+                                    data-placement="top" data-original-title="<?php echo get_phrase('edit'); ?>"
 
-                                       onclick="confirm_modal('<?php echo site_url('admin/project_historia_clinica/delete/' . $row1['project_historia_clinica_id']); ?>', '<?php echo site_url('admin/reload_projectroom_historia_clinica/' . $project_code); ?>');">
+                                    onclick="showAjaxModal('<?php echo site_url('modal/popup/project_historia_clinica_edit/' . $row1['project_historia_clinica_id'] . '/' . $project_code); ?>');">
 
-                                        <i class="entypo-trash"></i>
+                                    <i class="entypo-pencil"></i>
+
+                                </a>
+
+                                <a class="tooltip-default" style="color:#aaa;cursor:pointer;" data-toggle="tooltip"
+
+                                    data-placement="top" data-original-title="<?php echo get_phrase('delete'); ?>"
+
+                                    onclick="confirm_modal('<?php echo site_url('admin/project_historia_clinica/delete/' . $row1['project_historia_clinica_id']); ?>', '<?php echo site_url('admin/reload_projectroom_historia_clinica/' . $project_code); ?>');">
+
+                                    <i class="entypo-trash"></i>
 
                                 </a>
 
